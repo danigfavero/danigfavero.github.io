@@ -41,14 +41,9 @@ npm run dev
 
 ## 🚀 Deployment
 
-### Quick Deployment
+The project is automatically deployed via GitHub Actions when changes are pushed to the main branch.
 
-Use the provided deployment script:
-```bash
-./deploy.sh
-```
-
-### Manual Deployment
+### Manual Build
 
 1. Build the project:
 ```bash
@@ -57,25 +52,27 @@ npm run build
 
 2. The static files will be generated in the `out/` directory.
 
-3. Deploy the `out/` directory to your web server.
-
 ## 📝 Blog Management
 
 ### Adding New Blog Posts
 
-Currently, blog posts are stored as static data. See `BLOG_GUIDE.md` for detailed instructions on adding new posts.
+Use the provided script to create new blog posts:
+```bash
+npm run new-post
+```
+
+### Listing Posts
+
+To see all available posts:
+```bash
+npm run list-posts
+```
 
 ### Blog Structure
 
 - **Blog List**: `/blog` - Shows all blog posts
 - **Individual Posts**: `/blog/[id]` - Dynamic routes for each post
 - **Content**: Posts include title, excerpt, content, tags, and metadata
-
-### Future Improvements
-
-- Markdown file support
-- CMS integration
-- Admin interface for content management
 
 ## ⚙️ Configuration
 
@@ -102,7 +99,7 @@ The app is configured for static export in `next.config.ts`:
 - Edit `src/app/page.tsx` to modify the homepage
 - Update `src/app/layout.tsx` for global layout changes
 - Modify `src/app/globals.css` for custom styles
-- Add new blog posts following the guide in `BLOG_GUIDE.md`
+- Add new blog posts using the `npm run new-post` script
 
 ### Adding Pages
 
@@ -123,20 +120,24 @@ The app is configured for static export in `next.config.ts`:
 danigfavero.github.io/
 ├── .github/workflows/    # GitHub Actions
 ├── src/
-│   └── app/             # Next.js App Router
-│       ├── components/  # Reusable components
-│       │   └── Navigation.tsx
-│       ├── blog/        # Blog pages
-│       │   ├── page.tsx # Blog listing
-│       │   └── [id]/    # Individual blog posts
-│       ├── page.tsx     # Homepage
-│       ├── layout.tsx   # Root layout
-│       └── globals.css  # Global styles
+│   ├── app/             # Next.js App Router
+│   │   ├── components/  # Reusable components
+│   │   │   └── Navigation.tsx
+│   │   ├── blog/        # Blog pages
+│   │   │   ├── page.tsx # Blog listing
+│   │   │   └── [id]/    # Individual blog posts
+│   │   ├── page.tsx     # Homepage
+│   │   ├── layout.tsx   # Root layout
+│   │   └── globals.css  # Global styles
+│   ├── lib/             # Utility functions
+│   │   └── blog.ts      # Blog data handling
+│   └── posts/           # Markdown blog posts
+├── scripts/             # Utility scripts
+│   ├── create-post.js   # Create new blog posts
+│   └── list-posts.js    # List all posts
 ├── public/              # Static assets
 ├── next.config.ts       # Next.js configuration
 ├── package.json         # Dependencies and scripts
-├── deploy.sh           # Deployment script
-├── BLOG_GUIDE.md       # Blog management guide
 └── README.md           # This file
 ```
 
@@ -146,7 +147,7 @@ danigfavero.github.io/
 - **Base Path**: The app is configured for GitHub Pages with the correct base path
 - **Images**: Use the `next/image` component with `unoptimized: true`
 - **Client-side Features**: Ensure all interactive features work with static export
-- **Blog Posts**: Currently stored as static data; see `BLOG_GUIDE.md` for management
+- **Blog Posts**: Stored as markdown files in `src/posts/` directory
 
 ## 🔗 Links
 

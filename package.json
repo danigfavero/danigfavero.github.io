@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build && touch out/.nojekyll",
     "new-post": "node scripts/create-post.js",
     "list-posts": "node scripts/list-posts.js"
   },
