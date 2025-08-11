@@ -32,7 +32,7 @@ excerpt: "Add a brief description of your blog post here."
 date: "${date}"
 readTime: "5 min read"
 tags: ["Tag1", "Tag2"]
-author: "Dani G. Favero"
+author: "Daniela Favero"
 ---
 
 # ${title}

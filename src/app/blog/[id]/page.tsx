@@ -25,14 +25,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           {/* Back to blog link */}
           <div className="mb-8">
             <Link
               href="/blog"
-              className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors"
+              className="inline-flex items-center text-slate-300 hover:text-white font-medium transition-colors"
+              style={{ fontFamily: 'Inter, sans-serif' }}
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -42,24 +43,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {/* Article header */}
-          <article className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <article className="bg-slate-800/50 backdrop-blur-sm rounded-lg shadow-2xl p-8 border border-slate-700/50">
             <header className="mb-8">
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
+                    className="px-3 py-1 bg-slate-700/50 text-slate-200 text-sm rounded-full border border-slate-600/50 backdrop-blur-sm"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
               
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                 {post.title}
               </h1>
               
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-6">
+              <div className="flex items-center text-sm text-slate-300 mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <span>By {post.author}</span>
                 <span className="mx-2">•</span>
                 <time dateTime={post.date}>
@@ -76,7 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* Article content */}
             <div 
-              className="prose prose-lg dark:prose-invert max-w-none"
+              className="prose prose-lg max-w-none text-justify"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>

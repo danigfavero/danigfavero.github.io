@@ -14,8 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dani G. Favero",
-  description: "Personal website and blog of Dani G. Favero",
+  title: "Daniela Favero",
+  description: "Personal website and blog of Daniela Favero",
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon.ico' }
+    ],
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
