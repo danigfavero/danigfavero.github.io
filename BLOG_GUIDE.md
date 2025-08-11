@@ -1,60 +1,149 @@
 # Blog Guide
 
-This guide explains how to add new blog posts to your GitHub Pages site.
+This guide explains how to manage blog posts in your website.
 
-## Adding New Blog Posts
+## Overview
 
-Currently, blog posts are stored as static data in the `src/app/blog/[id]/page.tsx` file. To add a new post:
+Blog posts are now stored as individual markdown files in the `src/posts/` directory. Each post has frontmatter metadata and markdown content.
 
-1. **Edit the blog posts array** in `src/app/blog/[id]/page.tsx`
-2. **Add a new entry** to the `blogPosts` array with:
-   - `id`: Unique identifier (increment from the last one)
-   - `title`: Post title
-   - `content`: HTML content of the post
-   - `date`: Publication date (YYYY-MM-DD format)
-   - `readTime`: Estimated reading time
-   - `tags`: Array of relevant tags
-   - `author`: Your name
+## File Structure
 
-3. **Update the blog listing** in `src/app/blog/page.tsx` to include the new post in the `blogPosts` array
-
-## Example Blog Post Structure
-
-```typescript
-{
-  id: 4,
-  title: "Your New Blog Post Title",
-  content: `
-    <p>Your blog post content goes here. You can use HTML tags for formatting.</p>
-    
-    <h2>Section Heading</h2>
-    <p>More content...</p>
-    
-    <ul>
-      <li>List item 1</li>
-      <li>List item 2</li>
-    </ul>
-  `,
-  date: "2024-01-20",
-  readTime: "6 min read",
-  tags: ["Tag1", "Tag2"],
-  author: "Dani G. Favero"
-}
+```
+src/posts/
+├── getting-started-with-nextjs-15.md
+├── power-of-typescript.md
+└── building-scalable-apis-nodejs.md
 ```
 
-## Future Improvements
+## Creating a New Blog Post
 
-For a more scalable solution, consider:
+### Option 1: Using the convenience script (Recommended)
 
-1. **Markdown files**: Store posts as `.md` files in a `posts/` directory
-2. **CMS integration**: Use a headless CMS like Contentful or Strapi
-3. **Database**: Store posts in a database with an admin interface
-4. **Git-based CMS**: Use tools like Netlify CMS or Forestry
+```bash
+npm run new-post "Your Post Title"
+```
 
-## Styling
+This will:
+- Create a new markdown file with the correct slug
+- Add current date automatically
+- Include a template with proper frontmatter structure
+- Place the file in the correct directory
 
-Blog posts use custom CSS classes defined in `src/app/globals.css`. The `.prose` class provides consistent typography and spacing for blog content.
+### Option 2: Manual creation
 
-## Deployment
+1. Create a new `.md` file in `src/posts/`
+2. Use the filename as the slug (e.g., `my-awesome-post.md`)
+3. Add the required frontmatter at the top of the file
 
-After adding new posts, commit and push your changes. The site will automatically rebuild and deploy through GitHub Actions. 
+## Frontmatter Structure
+
+Each blog post must start with frontmatter (YAML between `---` markers):
+
+```yaml
+---
+title: "Your Post Title"
+excerpt: "Brief description of your post"
+date: "2024-01-15"
+readTime: "5 min read"
+tags: ["Tag1", "Tag2"]
+author: "Dani G. Favero"
+---
+```
+
+### Required Fields
+
+- `title`: The post title (displayed in the UI)
+- `excerpt`: Brief description shown in the blog list
+- `date`: Publication date (YYYY-MM-DD format)
+- `readTime`: Estimated reading time
+- `tags`: Array of tags for categorization
+- `author`: Author name
+
+## Writing Content
+
+After the frontmatter, write your content using standard markdown:
+
+```markdown
+# Main Heading
+
+## Subheading
+
+Regular paragraph text.
+
+- List item 1
+- List item 2
+
+**Bold text** and *italic text*
+
+```bash
+# Code blocks
+npm install package-name
+```
+
+[Link text](https://example.com)
+```
+
+## Markdown Features Supported
+
+- Headings (H1-H6)
+- Paragraphs and line breaks
+- Lists (ordered and unordered)
+- **Bold** and *italic* text
+- `Inline code`
+- Code blocks with syntax highlighting
+- Links
+- Images
+- Blockquotes
+
+## Adding Images
+
+Place images in the `public/` directory and reference them:
+
+```markdown
+![Alt text](/image-name.jpg)
+```
+
+## Building and Deployment
+
+1. **Development**: Run `npm run dev` to see changes locally
+2. **Build**: Run `npm run build` to generate static files
+3. **Deploy**: Run `npm run deploy` to deploy to GitHub Pages
+
+## File Naming Conventions
+
+- Use lowercase letters, numbers, and hyphens only
+- Avoid spaces and special characters
+- Keep filenames descriptive but concise
+- The filename becomes the URL slug
+
+## Examples
+
+### Good filenames:
+- `getting-started-with-nextjs.md`
+- `typescript-best-practices.md`
+- `nodejs-api-tutorial.md`
+
+### Avoid:
+- `Getting Started.md` (spaces, uppercase)
+- `post-1.md` (not descriptive)
+- `my_post.md` (underscores)
+
+## Troubleshooting
+
+### Post not appearing
+- Check that the frontmatter is properly formatted
+- Ensure the file is in the `src/posts/` directory
+- Verify the build completed successfully
+
+### Build errors
+- Check for syntax errors in markdown files
+- Ensure all required frontmatter fields are present
+- Look for invalid characters in filenames
+
+## Tips
+
+1. **Write in markdown**: It's easier to read and edit than HTML
+2. **Use descriptive tags**: Helps with categorization and SEO
+3. **Keep excerpts concise**: Aim for 1-2 sentences
+4. **Preview locally**: Always test your posts before deploying
+5. **Version control**: Commit your markdown files to track changes 

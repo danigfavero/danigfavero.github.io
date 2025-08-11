@@ -1,35 +1,9 @@
 import Link from 'next/link';
+import { getAllPosts } from '@/lib/blog';
 
-// This would typically come from a CMS or markdown files
-// For now, we'll use static data as an example
-const blogPosts = [
-  {
-    id: 1,
-    title: "Getting Started with Next.js 15",
-    excerpt: "Next.js 15 brings exciting new features like the App Router, Server Components, and improved performance. Let's explore what's new and how to get started.",
-    date: "2024-01-15",
-    readTime: "5 min read",
-    tags: ["Next.js", "React", "Web Development"]
-  },
-  {
-    id: 2,
-    title: "The Power of TypeScript in Modern Web Development",
-    excerpt: "TypeScript has become an essential tool for building robust web applications. Here's why you should consider it for your next project and how to get started.",
-    date: "2024-01-10",
-    readTime: "7 min read",
-    tags: ["TypeScript", "JavaScript", "Programming"]
-  },
-  {
-    id: 3,
-    title: "Building Scalable APIs with Node.js",
-    excerpt: "Learn the best practices for building scalable and maintainable APIs using Node.js, Express, and modern JavaScript features.",
-    date: "2024-01-05",
-    readTime: "8 min read",
-    tags: ["Node.js", "API", "Backend"]
-  }
-];
+export default async function Blog() {
+  const blogPosts = await getAllPosts();
 
-export default function Blog() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-16">
@@ -71,7 +45,7 @@ export default function Blog() {
                 </div>
                 
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  <Link href={`/blog/${post.id}`}>
+                  <Link href={`/blog/${post.slug}`}>
                     {post.title}
                   </Link>
                 </h2>
@@ -81,7 +55,7 @@ export default function Blog() {
                 </p>
                 
                 <Link
-                  href={`/blog/${post.id}`}
+                  href={`/blog/${post.slug}`}
                   className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors"
                 >
                   Read more
