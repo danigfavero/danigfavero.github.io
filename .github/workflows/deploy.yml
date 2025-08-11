@@ -33,21 +33,19 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: Copy to docs directory
+        run: |
+          rm -rf docs
+          cp -r out docs
+          touch docs/.nojekyll
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './out'
-      
-      - name: Create .nojekyll file
-        run: touch out/.nojekyll
-      
-      - name: Upload .nojekyll
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './out/.nojekyll'
+          path: './docs'
 
   deploy:
     environment:
