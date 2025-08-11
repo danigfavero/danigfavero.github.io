@@ -11,20 +11,10 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-            Dani G. Favero
+            home
           </Link>
           
           <div className="flex space-x-8">
-            <Link 
-              href="/" 
-              className={`${
-                pathname === '/' 
-                  ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' 
-                  : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-              } transition-colors pb-1`}
-            >
-              Home
-            </Link>
             <Link 
               href="/blog" 
               className={`${
@@ -33,7 +23,17 @@ export default function Navigation() {
                   : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
               } transition-colors pb-1`}
             >
-              Blog
+              blog
+            </Link>
+            <Link 
+              href="https://bccdev.ime.usp.br/tccs/2021/danifavero/" 
+              className={`${
+                pathname === 'https://bccdev.ime.usp.br/tccs/2021/danifavero/' 
+                  ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400' 
+                  : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+              } transition-colors pb-1`}
+            >
+              academic research
             </Link>
           </div>
         </div>
