@@ -24,3 +24,84 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom prose styles for blog content */
+.prose {
+  color: #374151;
+  line-height: 1.75;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose ul {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.prose code {
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.prose pre {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Dark mode prose styles */
+.dark .prose {
+  color: #d1d5db;
+}
+
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose strong {
+  color: #f9fafb;
+}
+
+.dark .prose code {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.dark .prose pre {
+  background-color: #374151;
+}
