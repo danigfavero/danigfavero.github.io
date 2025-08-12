@@ -15,7 +15,7 @@ export default function Home() {
                 height={128}
                 className="w-full h-full object-cover"
                 priority
-              />
+              />i
             </div>
             <h1 className="text-5xl font-bold text-white mb-4 font-space-grotesk">
               Daniela Favero
@@ -31,7 +31,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
             <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-lg shadow-2xl border border-gray-700/50">
-              <div className="w-20 h-20 mx-auto mb-6">
+              <Link href="/chick" className="block w-20 h-20 mx-auto mb-6 cursor-pointer hover:scale-110 transition-transform duration-300" title="psst... click me 🐥">
                 <Image
                   src="/snoopy-laptop.png"
                   alt="Snoopy at laptop"
@@ -39,7 +39,7 @@ export default function Home() {
                   height={80}
                   className="w-full h-full object-contain"
                 />
-              </div>
+              </Link>
               <h2 className="text-2xl font-bold text-white mb-4 font-space-grotesk">
                 software engineering
               </h2>
@@ -49,7 +49,7 @@ export default function Home() {
             </div>
             
             <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-lg shadow-2xl border border-gray-700/50">
-              <div className="w-20 h-20 mx-auto mb-6">
+              <Link href="/chick" className="block w-20 h-20 mx-auto mb-6 cursor-pointer hover:scale-110 transition-transform duration-300" title="psst... click me too 🐥">
                 <Image
                   src="/snoopy-pilot.png"
                   alt="Snoopy as pilot"
@@ -57,7 +57,7 @@ export default function Home() {
                   height={80}
                   className="w-full h-full object-contain"
                 />
-              </div>
+              </Link>
               <h2 className="text-2xl font-bold text-white mb-4 font-space-grotesk">
                 beyond code
               </h2>

@@ -27,7 +27,7 @@ export default function Navigation() {
               blog
             </Link>
             <Link 
-              href="https://bccdev.ime.usp.br/tccs/2021/danigfavero/" 
+              href="https://bccdev.ime.usp.br/tccs/2021/danifavero/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-300 transition-colors pb-1 font-inter"
