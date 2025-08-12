@@ -25,7 +25,7 @@ export default function Home() {
               <br />
               hi there! I&apos;m a brazilian software engineer, with a bachelor&apos;s degree in computer science.
               technology can thrive along with accountability and empathy, all it takes is for us to be aware of it.
-              check out my latest thoughts and projects on my <Link href="/blog" className="text-gray-400 hover:text-white transition-colors">blog</Link> and feel free to reach out to me!
+              check out my latest thoughts and projects on my <Link href="/blog" className="text-gray-400 hover:text-white transition-colorsnpm">blog</Link> and feel free to reach out to me!
             </p>
           </div>
           
