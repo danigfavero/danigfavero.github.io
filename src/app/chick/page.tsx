@@ -4,7 +4,19 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    Zdog: any;
+    Zdog: {
+      Illustration: new (options: Record<string, unknown>) => {
+        rotate: { y: number };
+        updateRenderGraph: () => void;
+      };
+      Shape: new (options: Record<string, unknown>) => unknown;
+      Cone: new (options: Record<string, unknown>) => unknown;
+      Ellipse: new (options: Record<string, unknown>) => {
+        copy: (options: Record<string, unknown>) => unknown;
+      };
+      Group: new (options: Record<string, unknown>) => unknown;
+      Cylinder: new (options: Record<string, unknown>) => unknown;
+    };
   }
 }
 
@@ -29,7 +41,7 @@ export default function ChickPage() {
   const initializeAnimation = () => {
     const PI = Math.PI;
 
-    let illo = new window.Zdog.Illustration({
+    const illo = new window.Zdog.Illustration({
       element: '.zdog-canvas',
       zoom: 3,
       dragRotate: true,
@@ -55,7 +67,7 @@ export default function ChickPage() {
     });
 
     // left eye
-    let eye = new window.Zdog.Ellipse({
+    const eye = new window.Zdog.Ellipse({
       addTo: illo,
       diameter: 5,
       quarters: 2,
@@ -72,7 +84,7 @@ export default function ChickPage() {
     });
 
     // monocle
-    var monocle = new window.Zdog.Group({
+    const monocle = new window.Zdog.Group({
       addTo: illo,
       translate: { x: 15, y: -10, z: 5 },
     });
@@ -102,7 +114,7 @@ export default function ChickPage() {
     });
 
     // hat
-    var topHat = new window.Zdog.Group({
+    const topHat = new window.Zdog.Group({
       addTo: illo,
       rotate: { x: PI / 2 },
       translate: { y: -50, z: -20 },
