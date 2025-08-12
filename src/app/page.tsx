@@ -17,15 +17,15 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+            <h1 className="text-5xl font-bold text-white mb-4 font-space-grotesk">
               Daniela Favero
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed text-justify" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <p className="text-xl text-gray-300 leading-relaxed text-justify font-inter">
               she/her
               <br />
               hi there! I&apos;m a brazilian software engineer, with a bachelor&apos;s degree in computer science.
               technology can thrive along with accountability and empathy, all it takes is for us to be aware of it.
-              check out my latest thoughts and projects on my <Link href="/blog" className="text-gray-400 hover:text-white transition-colorsnpm">blog</Link> and feel free to reach out to me!
+              check out my latest thoughts and projects on my <Link href="/blog" className="text-gray-400 hover:text-white transition-colors">blog</Link> and feel free to reach out to me :-)
             </p>
           </div>
           
@@ -40,10 +40,10 @@ export default function Home() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h2 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              <h2 className="text-2xl font-bold text-white mb-4 font-space-grotesk">
                 software engineering
               </h2>
-              <p className="text-gray-300 text-justify" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-gray-300 text-justify font-inter">
                 currently focused on functional programming, domain-driven design and cloud computing. sometimes flirting with data engineering and machine learning.
               </p>
             </div>
@@ -58,10 +58,10 @@ export default function Home() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h2 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              <h2 className="text-2xl font-bold text-white mb-4 font-space-grotesk">
                 beyond code
               </h2>
-              <p className="text-gray-300 text-justify" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-gray-300 text-justify font-inter">
                 when I&apos;m not coding, you&apos;ll find me exploring coffee shops and patisseries, studying urban planning or diving into art exhibitions.
               </p>
             </div>
@@ -72,8 +72,7 @@ export default function Home() {
               href="https://github.com/danigfavero"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-gray-600 to-gray-500 text-white px-10 py-3 rounded-lg font-medium transition-all transform hover:scale-105 border border-gray-500 hover:border-gray-400 flex items-center gap-2"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              className="bg-gradient-to-r from-gray-600 to-gray-500 text-white px-10 py-3 rounded-lg font-medium transition-all transform hover:scale-105 border border-gray-500 hover:border-gray-400 flex items-center gap-2 font-inter"
             >
               <span>github</span>
               <span>↗</span>
@@ -82,16 +81,14 @@ export default function Home() {
               href="https://linkedin.com/in/danigfavero"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-gray-600 to-gray-500 text-white px-10 py-3 rounded-lg font-medium transition-all transform hover:scale-105 border border-gray-500 hover:border-gray-400 flex items-center gap-2"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              className="bg-gradient-to-r from-gray-600 to-gray-500 text-white px-10 py-3 rounded-lg font-medium transition-all transform hover:scale-105 border border-gray-500 hover:border-gray-400 flex items-center gap-2 font-inter"
             >
               <span>linkedin</span>
               <span>↗</span>
             </Link>
             <Link
               href="http://lattes.cnpq.br/4380746598220062"
-              className="bg-gradient-to-r from-gray-600 to-gray-500 text-white px-10 py-3 rounded-lg font-medium transition-all transform hover:scale-105 border border-gray-500 hover:border-gray-400 flex items-center gap-2"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              className="bg-gradient-to-r from-gray-600 to-gray-500 text-white px-10 py-3 rounded-lg font-medium transition-all transform hover:scale-105 border border-gray-500 hover:border-gray-400 flex items-center gap-2 font-inter"
             >
               <span>lattes</span>
               <span>↗</span>

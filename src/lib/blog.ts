@@ -15,7 +15,6 @@ export interface BlogPost {
   tags: string[];
   author: string;
   content: string;
-  slug: string;
 }
 
 export interface BlogPostMeta {
@@ -26,11 +25,15 @@ export interface BlogPostMeta {
   readTime: string;
   tags: string[];
   author: string;
-  slug: string;
 }
 
 export function getPostSlugs(): string[] {
   try {
+    if (!fs.existsSync(postsDirectory)) {
+      console.warn('Posts directory does not exist:', postsDirectory);
+      return [];
+    }
+    
     const fileNames = fs.readdirSync(postsDirectory);
     return fileNames
       .filter(fileName => fileName.endsWith('.md'))
@@ -44,8 +47,20 @@ export function getPostSlugs(): string[] {
 export function getPostBySlug(slug: string): BlogPost | null {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
+    
+    if (!fs.existsSync(fullPath)) {
+      console.warn(`Post file does not exist: ${fullPath}`);
+      return null;
+    }
+    
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
+
+    // Validate required frontmatter fields
+    if (!data.title || !data.excerpt || !data.date || !data.author) {
+      console.error(`Missing required frontmatter in ${slug}.md`);
+      return null;
+    }
 
     // Convert markdown content to HTML
     const processedContent = remark()
@@ -55,12 +70,11 @@ export function getPostBySlug(slug: string): BlogPost | null {
 
     return {
       id: slug,
-      slug,
       title: data.title,
       excerpt: data.excerpt,
       date: data.date,
-      readTime: data.readTime,
-      tags: data.tags || [],
+      readTime: data.readTime || '5 min read',
+      tags: Array.isArray(data.tags) ? data.tags : [],
       author: data.author,
       content: processedContent,
     };
@@ -77,16 +91,10 @@ export function getAllPosts(): BlogPostMeta[] {
       const post = getPostBySlug(slug);
       if (!post) return null;
       
-      return {
-        id: post.id,
-        slug: post.slug,
-        title: post.title,
-        excerpt: post.excerpt,
-        date: post.date,
-        readTime: post.readTime,
-        tags: post.tags,
-        author: post.author,
-      };
+      // Return only metadata, not the full content
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { content, ...meta } = post;
+      return meta;
     })
     .filter((post): post is BlogPostMeta => post !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
