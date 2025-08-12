@@ -1,8 +1,11 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { getPostBySlug, getPostSlugs } from '@/lib/blog';
 
-// Generate static params for all blog posts
+interface BlogPostPageProps {
+  params: Promise<{ id: string }>;
+}
+
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
   return slugs.map((slug) => ({
@@ -10,14 +13,24 @@ export async function generateStaticParams() {
   }));
 }
 
-interface BlogPostPageProps {
-  params: Promise<{
-    id: string;
-  }>;
+// Add metadata generation for better SEO
+export async function generateMetadata({ params }: BlogPostPageProps) {
+  const { id } = await params;
+  const post = getPostBySlug(id);
+  
+  if (!post) {
+    return {};
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { id } = await params;
+  
   const post = getPostBySlug(id);
   
   if (!post) {
@@ -25,31 +38,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           {/* Back to blog link */}
-          <div className="mb-8">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-slate-300 hover:text-white font-medium transition-colors"
-              style={{ fontFamily: 'Inter, sans-serif' }}
-            >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back to Blog
-            </Link>
-          </div>
+          <Link 
+            href="/blog" 
+            className="inline-flex items-center text-gray-300 hover:text-white font-medium transition-colors"
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            back to blog
+          </Link>
+
 
           {/* Article header */}
-          <article className="bg-slate-800/50 backdrop-blur-sm rounded-lg shadow-2xl p-8 border border-slate-700/50">
+          <article className="bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-2xl p-8 border border-gray-700/50">
             <header className="mb-8">
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-slate-700/50 text-slate-200 text-sm rounded-full border border-slate-600/50 backdrop-blur-sm"
+                    className="px-3 py-1 bg-gray-700/50 text-gray-200 text-sm rounded-full border border-gray-600/50 backdrop-blur-sm"
                   >
                     {tag}
                   </span>
@@ -60,7 +72,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.title}
               </h1>
               
-              <div className="flex items-center text-sm text-slate-300 mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="flex items-center text-sm text-gray-300 mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <span>By {post.author}</span>
                 <span className="mx-2">•</span>
                 <time dateTime={post.date}>
