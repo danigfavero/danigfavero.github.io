@@ -7,10 +7,10 @@ tags: ["pt-br", "women in stem"]
 author: "Daniela Favero"
 ---
 
-![Ada Lovelace, matemática considerada mãe da ciência da computação](/ada.jpg)
-*Ada Lovelace, matemática considerada mãe da ciência da computação*
-
 Menos de 20% dos diplomas em ciência da computação e engenharia vão para mulheres. Ouço essa estatística desde que escolhi meu curso na faculdade. Quando cheguei pela primeira vez na sala de aula no Instituto de Matemática e Estatística da USP em 2018, a realidade era mais assustadora ainda: dos 60 calouros da ciência da computação, só 6 eram mulheres. A proporção incômoda levanta consigo a pergunta: por que as mulheres não estão escolhendo cursar computação?
+
+![Retrato (pintura) de Ada Lovelace.](/ada.jpg)
+*Ada Lovelace, matemática considerada mãe da ciência da computação*
 
 ## Mulheres como cuidadoras emotivas, homens como seres lógicos
 
@@ -22,7 +22,7 @@ Os papéis de gênero já começam a ser exercitados com brincadeiras de crianç
 
 ## O estereótipo de nerd genial
 
-![Personagens da série de televisão The Big Bang Theory que retratam muito bem o estereótipo de nerd genial](/tbbt.jpg)
+![Quatro homens com laptops e uma mulher com uma revista sentados em um sofá. Os homens vestem roupas de super-heróis e têm uma decoração com muitos livros, pôsteres, equações matemáticas e ferramentas científicas.](/tbbt.jpg)
 *Personagens da série de televisão The Big Bang Theory que retratam muito bem o estereótipo de nerd genial*
 
 
@@ -40,7 +40,7 @@ Por isso acho tão potente a ideia de diversificar os estereótipos. Não precis
 
 E quando olho para a história, a coisa fica ainda mais clara. A computação não nasceu masculina. Muito pelo contrário. Lá atrás, quando computadores eram usados para cálculos e tarefas consideradas repetitivas, quem estava ali eram mulheres. Ada Lovelace, Grace Hopper, tantas outras. Até os anos 1980, cursos de informática eram cheios de mulheres.
 
-![Primeira turma de graduados no curso de Ciência da Computação do IME-USP em 1974, mostrando um grupo de estudantes onde as mulheres são a maioria](/ime-usp-1974.jpg)
+![Fotografia de um grupo de cerca de 20 jovens em uma escadaria. Pelo menos 12 dos jovens parecem ser mulheres.](/ime-usp-1974.jpg)
 *Imagine a minha surpresa ao ver a imagem acima, com a primeira turma de graduados no curso de Ciência da Computação do IME-USP, em 1974, na qual as mulheres eram a maioria. 40 anos depois, somos apenas 10%.*
 
 Foi quando a computação ganhou valor econômico que tudo mudou. A partir de 1984, os computadores pessoais começaram a ser divulgados como brinquedo masculino. Os videogames também. E de repente a lógica e a genialidade passaram a ser vistas como qualidades masculinas. A consequência que a gente vê até hoje: no Brasil, apenas 20% dos profissionais de TI são mulheres, segundo o IBGE.
