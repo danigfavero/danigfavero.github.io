@@ -1,6 +1,6 @@
 ---
 title: "Accountability e Transparência — O Direito a Explicações"
-excerpt: "..."
+excerpt: "Quando se fala em transparência nos sistemas algorítmicos, a ideia parece sempre positiva. Mais transparência, mais clareza, mais confiança..."
 date: "2020-10-21"
 readTime: "3 min read"
 tags: ["pt-br", "computational law"]

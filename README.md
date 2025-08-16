@@ -1,3 +1,3 @@
-# danigfavero
+# danigfavero.github.io
 
-This is my personal website and blog built with Next.js and deployed on GitHub Pages.
+Personal website and blog built with **Next.js** and deployed on **GitHub Pages**.
