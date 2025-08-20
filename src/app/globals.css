@@ -22,11 +22,11 @@ body {
 
 /* Font utility classes */
 .font-space-grotesk {
-  font-family: 'Space Grotesk', var(--font-geist-sans), sans-serif;
+  font-family: var(--font-space-grotesk), var(--font-geist-sans), sans-serif;
 }
 
 .font-inter {
-  font-family: 'Inter', var(--font-geist-sans), sans-serif;
+  font-family: var(--font-inter), var(--font-geist-sans), sans-serif;
 }
 
 /* Link hover styles */

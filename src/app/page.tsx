@@ -6,8 +6,8 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center">
-          <div className="mb-12 max-w-4xl mx-auto">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden">
+          <div className="mb-8 max-w-4xl mx-auto">
+            <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
               <Image
                 src="/profile-photo.jpg"
                 alt="Daniela Favero"
@@ -15,17 +15,21 @@ export default function Home() {
                 height={128}
                 className="w-full h-full object-cover"
                 priority
-              />i
+              />
             </div>
-            <h1 className="text-5xl font-bold text-white mb-4 font-space-grotesk">
+            <h1 className="text-4xl font-bold text-white mb-2 font-space-grotesk">
               Daniela Favero
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed text-justify font-inter">
+            <p className="text-base text-gray-400 italic text-center mb-3 font-inter">
               she/her
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed text-justify font-inter">
+              hi there!
               <br />
-              hi there! I&apos;m a brazilian software engineer, with a bachelor&apos;s degree in computer science.
-              technology can thrive along with accountability and empathy, all it takes is for us to be aware of it.
-              check out my latest thoughts and projects on my <Link href="/blog" className="text-gray-400 hover:text-white transition-colors">blog</Link> and feel free to reach out to me :-)
+              I'm a Brazilian software engineer with a bachelor's degree in computer science.
+              I believe technology shapes society in profound ways: no technology is neutral and we must be intentional about its impact.
+              <br />
+              check out my latest thoughts and projects on my <Link href="/blog" className="text-gray-400 hover:text-white transition-colors underline">blog</Link> and feel free to reach out to me :-)
             </p>
           </div>
           
