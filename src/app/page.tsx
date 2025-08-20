@@ -26,7 +26,7 @@ export default function Home() {
             <p className="text-lg text-gray-300 leading-relaxed text-justify font-inter">
               hi there!
               <br />
-              I'm a Brazilian software engineer with a bachelor's degree in computer science.
+              I&apos;m a Brazilian software engineer with a bachelor&apos;s degree in computer science.
               I believe technology shapes society in profound ways: no technology is neutral and we must be intentional about its impact.
               <br />
               check out my latest thoughts and projects on my <Link href="/blog" className="text-gray-400 hover:text-white transition-colors underline">blog</Link> and feel free to reach out to me :-)
