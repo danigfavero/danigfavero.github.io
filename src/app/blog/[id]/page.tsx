@@ -39,7 +39,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
         <div className="max-w-4xl mx-auto">
           {/* Back to blog link */}
           <Link 
@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Link>
 
           {/* Article header */}
-          <article className="bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-2xl p-8 border border-gray-700/50 mt-8">
+          <article className="bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-2xl p-4 sm:p-6 lg:p-8 border border-gray-700/50 mt-8 overflow-hidden">
             <header className="mb-8">
               <div className="flex flex-wrap gap-2 mb-4" role="list" aria-label="Post tags">
                 {post.tags.map((tag) => (
@@ -68,11 +68,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ))}
               </div>
               
-              <h1 className="text-4xl font-bold text-white mb-4 font-space-grotesk">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 font-space-grotesk break-words hyphens-auto leading-tight">
                 {post.title}
               </h1>
               
-              <div className="flex items-center text-sm text-gray-300 mb-6 font-inter" role="group" aria-label="Post metadata">
+              <div className="flex flex-wrap items-center text-sm text-gray-300 mb-6 font-inter gap-1" role="group" aria-label="Post metadata">
                 <span>By {post.author}</span>
                 <span className="mx-2" aria-hidden="true">•</span>
                 <time dateTime={post.date}>
@@ -89,7 +89,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* Article content */}
             <div 
-              className="prose prose-lg max-w-none text-justify"
+              className="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-justify prose-invert prose-headings:break-words prose-headings:hyphens-auto prose-p:break-words prose-p:hyphens-auto prose-pre:overflow-x-auto prose-pre:whitespace-pre-wrap"
+              style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>

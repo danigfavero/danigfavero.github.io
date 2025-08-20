@@ -147,6 +147,9 @@ a[class*="px-"]:hover {
   text-decoration-color: #3b82f6;
   text-underline-offset: 2px;
   background-color: transparent;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .prose a:hover {
