@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --link-hover: #14b8a6;
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --link-hover: #3b82f6;
+  --accent-red: #ef4444;
+  --accent-blue: #2563eb;
+  --accent-yellow: #fbbf24;
+  --accent-black: #000000;
 }
 
 @theme inline {
@@ -20,6 +24,25 @@ body {
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 /* Font utility classes */
 .font-space-grotesk {
   font-family: var(--font-space-grotesk), var(--font-geist-sans), sans-serif;
@@ -27,6 +50,14 @@ body {
 
 .font-inter {
   font-family: var(--font-inter), var(--font-geist-sans), sans-serif;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), var(--font-geist-sans), sans-serif;
+}
+
+.font-sora {
+  font-family: var(--font-sora), var(--font-geist-sans), sans-serif;
 }
 
 /* Link hover styles */
@@ -38,19 +69,42 @@ nav a:hover {
   color: var(--link-hover) !important;
 }
 
-a[class*="text-gray-300"]:hover {
-  background-color: transparent !important;
+/* Geometric art animations */
+.geometric-element {
+  transition: transform 0.3s ease;
 }
 
-a[class*="bg-"]:hover,
-a[class*="px-"]:hover {
-  background-color: var(--link-hover) !important;
-  border-color: var(--link-hover) !important;
+.geometric-element:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1279px) {
+  .geometric-element:hover {
+    transform: none;
+  }
+}
+
+/* Custom button styles */
+.bauhaus-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.bauhaus-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 640px) {
+  .bauhaus-button:hover {
+    transform: translateY(0);
+    box-shadow: none;
+  }
 }
 
 /* Custom prose styles for blog content */
 .prose {
-  color: #ffffff;
+  color: #1f2937;
   line-height: 1.75;
 }
 
@@ -59,8 +113,8 @@ a[class*="px-"]:hover {
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #f8fafc;
-  border-bottom: 2px solid #6b7280;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
   padding-bottom: 0.5rem;
 }
 
@@ -69,7 +123,7 @@ a[class*="px-"]:hover {
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
-  color: #f1f5f9;
+  color: #1f2937;
 }
 
 .prose h4 {
@@ -77,12 +131,12 @@ a[class*="px-"]:hover {
   font-weight: 600;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
-  color: #e5e7eb;
+  color: #374151;
 }
 
 .prose p {
   margin-bottom: 1.25rem;
-  color: #ffffff;
+  color: #1f2937;
 }
 
 .prose ul {
@@ -93,46 +147,46 @@ a[class*="px-"]:hover {
 
 .prose li {
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: #1f2937;
   display: list-item;
 }
 
 .prose strong {
   font-weight: 600;
-  color: #f8fafc;
+  color: #111827;
 }
 
 .prose em {
-  color: #e5e7eb;
+  color: #374151;
   font-style: italic;
 }
 
 .prose blockquote {
-  border-left: 4px solid #6b7280;
+  border-left: 4px solid #e5e7eb;
   padding-left: 1rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: #d1d5db;
+  color: #6b7280;
 }
 
 .prose code {
-  background-color: #374151;
-  color: #e5e7eb;
+  background-color: #f3f4f6;
+  color: #374151;
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
   font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-  border: 1px solid #4b5563;
+  border: 1px solid #e5e7eb;
 }
 
 .prose pre {
-  background-color: #1f2937;
-  color: #e5e7eb;
+  background-color: #f9fafb;
+  color: #374151;
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
   margin-bottom: 1.25rem;
-  border: 1px solid #4b5563;
+  border: 1px solid #e5e7eb;
 }
 
 .prose pre code {
@@ -142,7 +196,7 @@ a[class*="px-"]:hover {
 }
 
 .prose a {
-  color: #60a5fa;
+  color: #2563eb;
   text-decoration: underline;
   text-decoration-color: #3b82f6;
   text-underline-offset: 2px;
@@ -153,14 +207,14 @@ a[class*="px-"]:hover {
 }
 
 .prose a:hover {
-  color: #ffffff;
-  text-decoration-color: #60a5fa;
+  color: #1d4ed8;
+  text-decoration-color: #2563eb;
   background-color: transparent;
 }
 
 .prose hr {
   border: none;
-  border-top: 1px solid #6b7280;
+  border-top: 1px solid #e5e7eb;
   margin: 2rem 0;
 }
 
@@ -174,14 +228,14 @@ a[class*="px-"]:hover {
 .prose td {
   padding: 0.75rem;
   text-align: left;
-  border-bottom: 1px solid #6b7280;
-  color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
 }
 
 .prose th {
-  background-color: #374151;
+  background-color: #f9fafb;
   font-weight: 600;
-  color: #f8fafc;
+  color: #111827;
 }
 
 /* Image styles for blog content */
@@ -191,8 +245,8 @@ a[class*="px-"]:hover {
   margin: 1.5rem 0;
   border-radius: 0.5rem;
   display: block;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-  border: 1px solid #4b5563;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
 }
 
 .prose figure {
@@ -207,7 +261,7 @@ a[class*="px-"]:hover {
   margin-top: 0.75rem;
   text-align: center;
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: #6b7280;
   font-style: italic;
 }
 
@@ -217,7 +271,7 @@ a[class*="px-"]:hover {
   display: block;
   text-align: center;
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: #6b7280;
   margin-top: 0.75rem;
   margin-bottom: 1.5rem;
 }

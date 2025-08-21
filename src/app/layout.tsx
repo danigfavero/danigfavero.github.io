@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk, Inter } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk, Inter, Poppins, Sora } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 
@@ -23,6 +23,18 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700'],
+});
+
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+});
+
 export const metadata: Metadata = {
   title: "Daniela Favero",
   description: "Personal website and blog of Daniela Favero",
@@ -43,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${inter.variable} ${poppins.variable} ${sora.variable} antialiased`}
       >
         <Navigation />
         {children}

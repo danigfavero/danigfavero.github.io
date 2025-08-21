@@ -41,9 +41,14 @@ export default function ChickPage() {
   const initializeAnimation = () => {
     const PI = Math.PI;
 
+    // Responsive canvas size
+    const isMobile = window.innerWidth < 640;
+    const canvasSize = isMobile ? 280 : 400;
+    const zoomLevel = isMobile ? 2 : 3;
+
     const illo = new window.Zdog.Illustration({
       element: '.zdog-canvas',
-      zoom: 3,
+      zoom: zoomLevel,
       dragRotate: true,
     });
 
@@ -160,21 +165,33 @@ export default function ChickPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex flex-col items-center justify-center">
-      <div className="text-center mb-8">
-        <h1 className="text-5xl font-bold text-white mb-4 font-serif italic tracking-wide">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 py-8">
+      <div className="text-center mb-6 sm:mb-8">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 font-serif italic tracking-wide">
           take him seriously.
         </h1>
       </div>
       
-      <div className="p-8">
+      <div className="p-4 sm:p-8">
         <canvas 
           className="zdog-canvas cursor-grab active:cursor-grabbing" 
-          width="400" 
-          height="400"
+          width="280" 
+          height="280"
+          style={{
+            width: 'min(280px, calc(100vw - 2rem))',
+            height: 'min(280px, calc(100vw - 2rem))',
+          }}
         />
       </div>
       
+      <style jsx>{`
+        @media (min-width: 640px) {
+          .zdog-canvas {
+            width: 400px !important;
+            height: 400px !important;
+          }
+        }
+      `}</style>
 
     </div>
   );
