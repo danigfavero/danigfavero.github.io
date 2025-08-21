@@ -4,10 +4,6 @@
   --background: #ffffff;
   --foreground: #1f2937;
   --link-hover: #3b82f6;
-  --accent-red: #ef4444;
-  --accent-blue: #2563eb;
-  --accent-yellow: #fbbf24;
-  --accent-black: #000000;
 }
 
 @theme inline {
@@ -67,39 +63,6 @@ a:hover {
 
 nav a:hover {
   color: var(--link-hover) !important;
-}
-
-/* Geometric art animations */
-.geometric-element {
-  transition: transform 0.3s ease;
-}
-
-.geometric-element:hover {
-  transform: scale(1.05);
-}
-
-@media (max-width: 1279px) {
-  .geometric-element:hover {
-    transform: none;
-  }
-}
-
-/* Custom button styles */
-.bauhaus-button {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(0);
-}
-
-.bauhaus-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-@media (max-width: 640px) {
-  .bauhaus-button:hover {
-    transform: translateY(0);
-    box-shadow: none;
-  }
 }
 
 /* Custom prose styles for blog content */

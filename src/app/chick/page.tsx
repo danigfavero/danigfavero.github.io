@@ -43,7 +43,6 @@ export default function ChickPage() {
 
     // Responsive canvas size
     const isMobile = window.innerWidth < 640;
-    const canvasSize = isMobile ? 280 : 400;
     const zoomLevel = isMobile ? 2 : 3;
 
     const illo = new window.Zdog.Illustration({
