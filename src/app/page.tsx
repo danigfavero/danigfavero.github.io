@@ -8,18 +8,18 @@ export default function Home() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
         <div className="max-w-6xl 2xl:max-w-[90%] mx-auto">
           {/* Main Content Area */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-8 2xl:gap-16 min-h-[80vh] 2xl:min-h-[70vh] 2xl:pt-16">
+          <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-8 2xl:gap-16 pt-1 2xl:pt-2">
                 {/* Left Content */}
-                <div className="p-6 sm:p-8 lg:p-12 2xl:p-16 flex flex-col 2xl:justify-start 2xl:pt-20 relative">
+                <div className="p-4 sm:p-6 lg:p-8 2xl:p-12 flex flex-col justify-center 2xl:justify-start relative">
                   <div className="max-w-lg 2xl:max-w-2xl mx-auto xl:mx-0">
-                    <div className="mb-6 2xl:mb-8">
-                      <p className="text-blue-600 font-bold mb-4 2xl:mb-6 tracking-wide uppercase text-sm 2xl:text-base font-inter">
+                    <div className="mb-3 2xl:mb-6">
+                      <p className="text-blue-600 font-bold mb-2 2xl:mb-4 tracking-wide uppercase text-sm 2xl:text-base font-inter">
                         WELCOME
                       </p>
-                      <h1 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-gray-900 mb-6 2xl:mb-8 leading-tight font-sora">
+                      <h1 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-gray-900 mb-3 2xl:mb-6 leading-tight font-sora">
                         Daniela Favero
                       </h1>
-                      <p className="text-lg sm:text-xl 2xl:text-2xl text-gray-600 leading-relaxed mb-8 2xl:mb-10 font-inter">
+                      <p className="text-lg sm:text-xl 2xl:text-2xl text-gray-600 leading-relaxed mb-4 2xl:mb-8 font-inter">
                         software engineer
                         <br />
                         bachelor of computer science
@@ -27,7 +27,7 @@ export default function Home() {
                     </div>
 
                     {/* Personal Info */}
-                    <div className="space-y-4">
+                    <div className="space-y-2 2xl:space-y-4">
                       <div className="flex items-center space-x-4 2xl:space-x-6">
                         <div className="w-16 h-16 2xl:w-20 2xl:h-20 rounded-full overflow-hidden flex-shrink-0">
                           <Image
@@ -64,7 +64,7 @@ export default function Home() {
                         in my free time, I&apos;m always visiting coffee shops / patisseries, nerding out about urban planning and checking art exhibitions.
                       </p>
                       
-                      <div className="flex flex-wrap gap-4 pt-4">
+                      <div className="flex flex-wrap gap-4 pt-2 2xl:pt-4">
                         <Link
                           href="https://github.com/danigfavero"
                           target="_blank"
@@ -98,7 +98,7 @@ export default function Home() {
                 </div>
 
             {/* Right Geometric Art - Hidden on screens smaller than xl */}
-            <div className="hidden xl:flex h-full 2xl:items-start 2xl:pt-20 items-center justify-center">
+            <div className="hidden xl:flex h-full items-start justify-center">
               <div className="w-full max-w-[500px] 2xl:max-w-[700px]">
                 <GeometricArt variant="sidebar" />
               </div>

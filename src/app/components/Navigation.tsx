@@ -8,7 +8,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-gray-50 pt-4 2xl:pt-6" aria-label="Main navigation">
+    <nav className="bg-gray-50 pt-1 2xl:pt-2" aria-label="Main navigation">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
         <div className="max-w-6xl 2xl:max-w-[90%] mx-auto">
           <div className="flex items-center justify-between h-16 2xl:h-20 px-6 sm:px-8 lg:px-12">
