@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --link-hover: #3b82f6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-link-hover: var(--link-hover);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Font utility classes */
+.font-space-grotesk {
+  font-family: var(--font-space-grotesk), var(--font-geist-sans), sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), var(--font-geist-sans), sans-serif;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), var(--font-geist-sans), sans-serif;
+}
+
+.font-sora {
+  font-family: var(--font-sora), var(--font-geist-sans), sans-serif;
+}
+
+/* Link hover styles */
+a:hover {
+  color: var(--link-hover) !important;
+}
+
+nav a:hover {
+  color: var(--link-hover) !important;
+}
+
+/* Custom prose styles for blog content */
+.prose {
+  color: #1f2937;
+  line-height: 1.75;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+}
+
+.prose h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  color: #1f2937;
+}
+
+.prose ul {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+  display: list-item;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.prose em {
+  color: #374151;
+  font-style: italic;
+}
+
+.prose blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.prose code {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  border: 1px solid #e5e7eb;
+}
+
+.prose pre {
+  background-color: #f9fafb;
+  color: #374151;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+  border: 1px solid #e5e7eb;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
+.prose a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-decoration-color: #3b82f6;
+  text-underline-offset: 2px;
+  background-color: transparent;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.prose a:hover {
+  color: #1d4ed8;
+  text-decoration-color: #2563eb;
+  background-color: transparent;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.prose th,
+.prose td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+
+.prose th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Image styles for blog content */
+.prose img {
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  display: block;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.prose figure {
+  margin: 1.5rem 0;
+}
+
+.prose figure img {
+  margin: 0;
+}
+
+.prose figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Style for image captions using italic text after images */
+.prose img + em,
+.prose img + p em:first-child {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}
